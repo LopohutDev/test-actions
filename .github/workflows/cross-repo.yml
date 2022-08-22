@@ -16,9 +16,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
         with:
-            repository: coralewh/test-action-repo-2
-            ref: 'main'
-            token:  ${{ secrets.TOKEN }}
+          repository: LopohutDev/test-actions2
+          ref: "main"
+          token: ${{ secrets.TOKEN }}
       - name: Create release branch
         run: git checkout -b release/v${{ github.event.inputs.versionName }}
       - name: Initialize mandatory git config
@@ -57,7 +57,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           head: release/v${{ github.event.inputs.versionName }}
-          repository: coralewh/test-action-repo-2
+          repository: LopohutDev/test-actions2
           base: main
           title: v${{ github.event.inputs.versionName }} into main
           reviewers: ${{ github.event.issue.user.login }}
