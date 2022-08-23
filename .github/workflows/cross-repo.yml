@@ -53,9 +53,9 @@ jobs:
       #     clean: true
       #     commit_message: release/v${{ github.event.inputs.versionName }} BOT New Strings for translation submitted.
       - name: Create pull request into main
-        uses: thomaseizinger/create-pull-request@1.0.0
+        uses: thomaseizinger/create-pull-request@master
         with:
-          github-token: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
           head: release/v${{ github.event.inputs.versionName }}
           repository: LopohutDev/test-actions2
           base: main
